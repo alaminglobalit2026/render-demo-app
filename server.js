@@ -33,10 +33,9 @@ async function initDb() {
   console.log('Database ready (todos table checked/created).');
 }
 
-// Root route (Home page) - যাতে ব্রাউজারে ঢুকলে Cannot GET / না দেখায়
+// Root route (Home page) - ব্রাউজারে ঢুকলে Cannot GET / দেখাবে না
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
-  // অথবা চাইলে টেক্সট দিতে পারেন: res.send('Render Demo App is running successfully!');
+  res.send('Render Demo App is running successfully!');
 });
 
 // Health check endpoint — handy for confirming the service is alive on Render.
